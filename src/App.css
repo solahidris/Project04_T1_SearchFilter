@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.appTitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  max-width: 40%;
+}
+
+.dividerLine {
+  margin: 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.appContent {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
