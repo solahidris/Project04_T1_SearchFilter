@@ -41,18 +41,31 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   max-width: 40%;
+  font-weight: bold;
 }
 
 .dividerLine {
-  margin: 10px;
+  margin: 10px 10px 20px 10px;
   font-size: 20px;
   letter-spacing: 2px;
 }
 
 .appContent {
+  max-width: 50%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
+.h3Margin {
+  margin-bottom: -10px;
+  text-transform: uppercase;
+}
+
+.ulMargin {
+  margin-top: 0px;
 }

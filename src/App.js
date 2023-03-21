@@ -7,23 +7,30 @@ function App() {
   // Build an app that allows users to
   // enter search keys and it filters the user list
   // from the hardcode list based on the entered key
-  const list = ["abu", "babu", "cini", "daud", "epul"];
 
-  // One approach is to use a text input with an onChange event handler 
-  // that filters and displays a list of options based on the user's input.
-  // This can be implemented using state
-  // to hold the list of options and the current search query,
-  // and filtering the options based on the query.
+  const userList = [
+    "Michael",
+    "Ali",
+    "Abu",
+    "Apabenda",
+    "Utoh",
+    "PaleBana",
+    "Gapodior",
+    "Korok",
+    "Kering",
+  ];
+  const [userInput, setUserInput] = useState("");
+  const [filteredList, setFilteredList] = useState([]);
 
-  const [userInput, setUserInput] = useState('');
+  const userInputHandler = (event) => {
+    const userInput = event.target.value;
+    setUserInput(userInput);
 
-  function userInputHandler(event) {
-    setUserInput(event.target.value);
+    const filtered = userList.filter((user) =>
+      user.toLowerCase().includes(userInput.toLowerCase())
+    );
+    setFilteredList(filtered);
   };
-
-  // const userInputHandler(event) => {
-  //   return setUserInput(event.target.value);
-  // };
 
   return (
     <div className="App">
@@ -37,10 +44,17 @@ function App() {
           ------------------------------------------------------------
         </p>
         <div className="appContent">
-          <label>{list}</label>
-          <input type={"text"} value={userInput} onChange={userInputHandler}/>
-          {/* <textarea /> */}
-          <label>this is the current userInput = {userInput}</label>
+          <h3 className="h3Margin">User List:</h3>
+          {/* userList with , and spaces*/}
+          <h4>{userList.join(", ")}</h4>
+          <p className="dividerLine">------------------</p>
+          <input type={"text"} onChange={userInputHandler}></input>
+          <p>Keyword Filter = {userInput}</p>
+          <ul className="ulMargin">
+            {filteredList.map((user) => (
+              <li key={user}>{user}</li>
+            ))}
+          </ul>
         </div>
       </header>
     </div>
